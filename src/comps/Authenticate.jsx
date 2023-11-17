@@ -11,9 +11,11 @@ const Authenticate = ({ token }) => {
                     "Content-type": "application/json", Authorization: `Bearer ${token}`,
                 }
             });
+            const data = await response.json();
+            setSuccessMessage(data.message);
         } catch (error) {
             setError(error.message)
-            console.log(`it fires off`)
+           // console.log(`it fires off`)
         }}
 
 
@@ -22,6 +24,7 @@ const Authenticate = ({ token }) => {
 
                 <h2>Authenticate!</h2>
                 {error && <p>{error}</p>}
+                {successMessage && <p>{successMessage}</p>}
                 <button onClick={handleClick}>Authenticate</button>
             </>
         )

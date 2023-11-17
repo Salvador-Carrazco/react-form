@@ -25,7 +25,7 @@ const SignUpForm = ({setToken}) => {
     }catch(error){
         setError(error.message)
     }
-    console.log (`is anybody out there?`);
+    //console.log (`is anybody out there?`);
 }
 
 return (
